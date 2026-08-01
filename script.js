@@ -1,45 +1,23 @@
-function openGift(){
+function openGift() {
+
+    let gift = document.getElementById("giftBox");
+
+    gift.classList.add("openGift");
 
 
-let gift=document.getElementById("giftBox");
+    setTimeout(() => {
+
+        document.getElementById("giftScreen").style.display = "none";
+
+        document
+        .getElementById("birthdayCard")
+        .classList.remove("hidden");
 
 
-gift.classList.add("openGift");
+        startCelebration();
 
 
-
-setTimeout(()=>{
-
-
-document.getElementById("giftScreen").style.display="none";
-
-
-document.getElementById("birthdayCard")
-.classList.remove("hidden");
-
-
-startCelebration();
-
-
-
-},1200);
-
-
-
-}
-
-
-
-
-function startCelebration(){
-
-
-setInterval(()=>createEffect("❤️"),1200);
-
-setInterval(()=>createEffect("🌸"),1800);
-
-setInterval(()=>createEffect("✨"),1500);
-
+    }, 1200);
 
 }
 
@@ -47,38 +25,108 @@ setInterval(()=>createEffect("✨"),1500);
 
 
 
-function createEffect(symbol){
+function startCelebration() {
 
 
-let item=document.createElement("div");
+    setInterval(() => {
 
+        createEffect("✨");
 
-item.innerHTML=symbol;
-
-
-item.className="floating";
-
-
-item.style.left=Math.random()*90+"vw";
-
-
-item.style.animationDuration=
-(5+Math.random()*4)+"s";
+    }, 500);
 
 
 
-document.body.appendChild(item);
+    setInterval(() => {
+
+        createEffect("🌸");
+
+    }, 900);
 
 
 
-setTimeout(()=>{
+    setInterval(() => {
+
+        createEffect("❤️");
+
+    }, 1200);
 
 
-item.remove();
+
+    createFireworks();
 
 
-},9000);
+}
 
+
+
+
+
+
+function createEffect(symbol) {
+
+
+    let effect = document.createElement("div");
+
+
+    effect.className = "floating";
+
+
+    effect.innerHTML = symbol;
+
+
+    effect.style.left =
+    Math.random() * 95 + "vw";
+
+
+    effect.style.fontSize =
+    (20 + Math.random() * 35) + "px";
+
+
+
+    effect.style.animationDuration =
+    (4 + Math.random() * 5) + "s";
+
+
+
+    document.body.appendChild(effect);
+
+
+
+    setTimeout(() => {
+
+        effect.remove();
+
+    },9000);
+
+
+}
+
+
+
+
+
+
+function createFireworks() {
+
+
+    let symbols = ["🎆","✨","🎉"];
+
+
+    for(let i = 0; i < 30; i++) {
+
+
+        setTimeout(() => {
+
+
+            createEffect(
+            symbols[Math.floor(Math.random()*symbols.length)]
+            );
+
+
+        }, i * 100);
+
+
+    }
 
 
 }
