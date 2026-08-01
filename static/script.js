@@ -1,28 +1,27 @@
-function openGift(){
+function openGift() {
 
 
-let gift=document.getElementById("giftBox");
+    let gift = document.getElementById("giftBox");
 
 
-gift.classList.add("openGift");
-
-
-
-setTimeout(()=>{
-
-
-document.getElementById("giftScreen").style.display="none";
-
-
-document.getElementById("birthdayCard")
-.classList.remove("hidden");
-
-
-startCelebration();
+    gift.classList.add("openGift");
 
 
 
-},1200);
+    setTimeout(() => {
+
+
+        document.getElementById("giftScreen").style.display = "none";
+
+
+        document.getElementById("birthdayCard")
+        .classList.remove("hidden");
+
+
+        startCelebration();
+
+
+    }, 1200);
 
 
 
@@ -31,14 +30,35 @@ startCelebration();
 
 
 
-function startCelebration(){
+
+function startCelebration() {
 
 
-setInterval(()=>createEffect("❤️"),1200);
+    setInterval(() => {
 
-setInterval(()=>createEffect("🌸"),1800);
+        createEffect("✨");
 
-setInterval(()=>createEffect("✨"),1500);
+    }, 700);
+
+
+
+    setInterval(() => {
+
+        createEffect("🌸");
+
+    }, 1200);
+
+
+
+    setInterval(() => {
+
+        createEffect("❤️");
+
+    }, 1500);
+
+
+
+    fireworks();
 
 
 }
@@ -47,38 +67,71 @@ setInterval(()=>createEffect("✨"),1500);
 
 
 
-function createEffect(symbol){
 
 
-let item=document.createElement("div");
+function createEffect(symbol) {
 
 
-item.innerHTML=symbol;
+    let item = document.createElement("div");
 
 
-item.className="floating";
+    item.innerHTML = symbol;
 
 
-item.style.left=Math.random()*90+"vw";
+    item.className = "floating";
 
 
-item.style.animationDuration=
-(5+Math.random()*4)+"s";
+    item.style.left =
+    Math.random() * 90 + "vw";
+
+
+    item.style.fontSize =
+    (20 + Math.random() * 25) + "px";
 
 
 
-document.body.appendChild(item);
+    item.style.animationDuration =
+    (4 + Math.random() * 5) + "s";
 
 
 
-setTimeout(()=>{
+    document.body.appendChild(item);
 
 
-item.remove();
+
+    setTimeout(() => {
 
 
-},9000);
+        item.remove();
 
+
+    },9000);
+
+
+}
+
+
+
+
+
+
+
+function fireworks() {
+
+
+    for(let i = 0; i < 25; i++) {
+
+
+        setTimeout(() => {
+
+
+            createEffect("🎆");
+
+
+        }, i * 80);
+
+
+    }
 
 
 }
