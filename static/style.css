@@ -6,24 +6,23 @@
 body {
 
     margin: 0;
-
     min-height: 100vh;
 
     font-family: "Noto Sans Tamil", Arial, sans-serif;
 
     background:
-    radial-gradient(circle at top, #fff1a8, #8b0000 70%);
-
-    color: #5a2600;
+    linear-gradient(135deg, #8b0000, #b8860b, #5a0000);
 
     overflow-x: hidden;
 
+    color: #4b1f00;
 }
 
 
 
 
-/* ---------- Opening Screen ---------- */
+
+/* Opening Screen */
 
 
 #giftScreen {
@@ -40,106 +39,43 @@ body {
 
     text-align:center;
 
-    position:relative;
-
     padding:20px;
 
-}
-
-
-
-.royalGlow {
-
-    position:absolute;
-
-    width:350px;
-
-    height:350px;
-
-    background:#ffd700;
-
-    filter:blur(120px);
-
-    opacity:.4;
-
-    z-index:-1;
+    color:white;
 
 }
 
 
 
-.flowers {
+
+.traditional {
 
     font-size:45px;
 
     margin:20px;
 
-}
-
-
-
-
-.giftBox {
-
-    position:relative;
-
-    animation:giftFloat 3s infinite ease-in-out;
+    animation:glow 2s infinite alternate;
 
 }
 
-
-
-.gift {
-
-    font-size:130px;
-
-}
-
-
-
-.giftRibbon {
-
-    position:absolute;
-
-    font-size:60px;
-
-    top:-30px;
-
-    left:35px;
-
-    z-index:2;
-
-    transition:1s;
-
-}
-
-
-
-.openGift .giftRibbon {
-
-    transform:
-    translateY(-120px)
-    rotate(-30deg);
-
-}
 
 
 
 #giftScreen h1 {
 
+    font-size:42px;
+
     color:#ffd700;
 
-    font-size:40px;
-
-    text-shadow:0 0 15px black;
+    text-shadow:
+    0 0 10px black,
+    0 0 25px gold;
 
 }
 
 
 
 #giftScreen p {
-
-    color:white;
 
     font-size:22px;
 
@@ -148,21 +84,73 @@ body {
 
 
 
+/* Gift */
+
+
+.giftBox {
+
+    position:relative;
+
+    margin:30px;
+
+    animation:float 3s infinite;
+
+}
+
+
+
+.giftBody {
+
+    font-size:130px;
+
+}
+
+
+
+.giftLid {
+
+    position:absolute;
+
+    top:-45px;
+
+    left:35px;
+
+    font-size:60px;
+
+    transition:1s;
+
+}
+
+
+
+
+.openGift .giftLid {
+
+    transform:
+    translateY(-100px)
+    rotate(-25deg);
+
+}
+
+
+
+
+
 button {
 
-
-    margin-top:20px;
 
     padding:15px 45px;
 
     border-radius:50px;
 
-    border:3px solid #ffd700;
+    border:3px solid gold;
 
     background:
+
     linear-gradient(#ffd700,#b8860b);
 
-    color:#6b0000;
+
+    color:#700000;
 
     font-size:22px;
 
@@ -171,6 +159,7 @@ button {
     cursor:pointer;
 
     transition:.3s;
+
 
 }
 
@@ -186,8 +175,7 @@ button:hover {
 
 
 
-
-/* ---------- Card ---------- */
+/* Card */
 
 
 .hidden {
@@ -214,21 +202,27 @@ button:hover {
 
 
 
+
 .card {
 
 
-    max-width:750px;
-
     width:100%;
+
+    max-width:750px;
 
 
     background:
 
     linear-gradient(
     145deg,
-    #fffdf2,
-    #fff2c9
+    #fffdf5,
+    #ffe7a0
     );
+
+
+    border:
+
+    12px double #d4af37;
 
 
     border-radius:35px;
@@ -240,45 +234,29 @@ button:hover {
     text-align:center;
 
 
-    border:
-
-    12px double #d4af37;
-
-
     box-shadow:
 
     0 0 30px gold,
-
     0 0 80px rgba(255,215,0,.5);
 
 
     animation:
 
-    cardOpen 1.5s ease;
+    appear 1.5s ease;
+
 
 }
-
-
-
-
-
-.decor {
-
-    font-size:45px;
-
-    letter-spacing:10px;
-
-}
-
 
 
 
 
 .card h1 {
 
+
     color:#990000;
 
     font-size:42px;
+
 
 }
 
@@ -288,11 +266,9 @@ button:hover {
 .message {
 
 
-    font-size:23px;
+    font-size:22px;
 
     line-height:2;
-
-    margin-top:30px;
 
 }
 
@@ -305,23 +281,24 @@ button:hover {
 
     margin-top:35px;
 
-    font-size:26px;
+    font-size:25px;
 
     color:#990000;
-
 
 }
 
 
 
-.signature span {
+
+.names {
 
 
     color:#b8860b;
 
+    font-size:32px;
+
     font-weight:bold;
 
-    font-size:32px;
 
 }
 
@@ -329,7 +306,7 @@ button:hover {
 
 
 
-/* ---------- Cake ---------- */
+/* Cake */
 
 
 .cake {
@@ -337,33 +314,29 @@ button:hover {
 
     font-size:100px;
 
-    margin:20px;
-
-
-    animation:
-
-    cakeBounce 2s infinite;
+    animation:bounce 2s infinite;
 
 }
 
 
 
 
-.flames {
+.candles {
 
 
     font-size:35px;
 
-    animation:
-
-    flame 0.5s infinite alternate;
+    animation:flicker .5s infinite alternate;
 
 }
 
 
 
 
-/* ---------- Floating Effects ---------- */
+
+
+
+/* Floating celebration */
 
 
 .floating {
@@ -371,18 +344,14 @@ button:hover {
 
     position:fixed;
 
-    bottom:-50px;
+    bottom:-40px;
 
-    pointer-events:none;
+    z-index:100;
 
-    z-index:999;
-
-
-    animation:
-
-    rise linear forwards;
+    animation:rise linear forwards;
 
 }
+
 
 
 
@@ -417,10 +386,7 @@ to {
 
 
 
-/* ---------- Animations ---------- */
-
-
-@keyframes giftFloat {
+@keyframes float {
 
 
 50% {
@@ -433,7 +399,8 @@ to {
 
 
 
-@keyframes flame {
+
+@keyframes flicker {
 
 
 from {
@@ -454,7 +421,8 @@ to {
 
 
 
-@keyframes cakeBounce {
+
+@keyframes bounce {
 
 
 50% {
@@ -468,7 +436,8 @@ to {
 
 
 
-@keyframes cardOpen {
+
+@keyframes appear {
 
 
 from {
@@ -491,3 +460,25 @@ to {
 
 }
 
+
+
+
+
+@keyframes glow {
+
+
+from {
+
+    text-shadow:0 0 10px gold;
+
+}
+
+
+to {
+
+    text-shadow:0 0 30px white;
+
+}
+
+
+}
