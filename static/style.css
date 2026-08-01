@@ -1,1 +1,493 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: "Noto Sans Tamil", Arial, sans-serif;
+
+    background:
+    radial-gradient(circle at top, #fff1a8, #8b0000 70%);
+
+    color: #5a2600;
+
+    overflow-x: hidden;
+
+}
+
+
+
+
+/* ---------- Opening Screen ---------- */
+
+
+#giftScreen {
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    padding:20px;
+
+}
+
+
+
+.royalGlow {
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:#ffd700;
+
+    filter:blur(120px);
+
+    opacity:.4;
+
+    z-index:-1;
+
+}
+
+
+
+.flowers {
+
+    font-size:45px;
+
+    margin:20px;
+
+}
+
+
+
+
+.giftBox {
+
+    position:relative;
+
+    animation:giftFloat 3s infinite ease-in-out;
+
+}
+
+
+
+.gift {
+
+    font-size:130px;
+
+}
+
+
+
+.giftRibbon {
+
+    position:absolute;
+
+    font-size:60px;
+
+    top:-30px;
+
+    left:35px;
+
+    z-index:2;
+
+    transition:1s;
+
+}
+
+
+
+.openGift .giftRibbon {
+
+    transform:
+    translateY(-120px)
+    rotate(-30deg);
+
+}
+
+
+
+#giftScreen h1 {
+
+    color:#ffd700;
+
+    font-size:40px;
+
+    text-shadow:0 0 15px black;
+
+}
+
+
+
+#giftScreen p {
+
+    color:white;
+
+    font-size:22px;
+
+}
+
+
+
+
+button {
+
+
+    margin-top:20px;
+
+    padding:15px 45px;
+
+    border-radius:50px;
+
+    border:3px solid #ffd700;
+
+    background:
+    linear-gradient(#ffd700,#b8860b);
+
+    color:#6b0000;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+button:hover {
+
+    transform:scale(1.1);
+
+}
+
+
+
+
+
+
+/* ---------- Card ---------- */
+
+
+.hidden {
+
+    display:none !important;
+
+}
+
+
+
+#birthdayCard {
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+
+
+.card {
+
+
+    max-width:750px;
+
+    width:100%;
+
+
+    background:
+
+    linear-gradient(
+    145deg,
+    #fffdf2,
+    #fff2c9
+    );
+
+
+    border-radius:35px;
+
+
+    padding:40px;
+
+
+    text-align:center;
+
+
+    border:
+
+    12px double #d4af37;
+
+
+    box-shadow:
+
+    0 0 30px gold,
+
+    0 0 80px rgba(255,215,0,.5);
+
+
+    animation:
+
+    cardOpen 1.5s ease;
+
+}
+
+
+
+
+
+.decor {
+
+    font-size:45px;
+
+    letter-spacing:10px;
+
+}
+
+
+
+
+
+.card h1 {
+
+    color:#990000;
+
+    font-size:42px;
+
+}
+
+
+
+
+.message {
+
+
+    font-size:23px;
+
+    line-height:2;
+
+    margin-top:30px;
+
+}
+
+
+
+
+
+.signature {
+
+
+    margin-top:35px;
+
+    font-size:26px;
+
+    color:#990000;
+
+
+}
+
+
+
+.signature span {
+
+
+    color:#b8860b;
+
+    font-weight:bold;
+
+    font-size:32px;
+
+}
+
+
+
+
+
+/* ---------- Cake ---------- */
+
+
+.cake {
+
+
+    font-size:100px;
+
+    margin:20px;
+
+
+    animation:
+
+    cakeBounce 2s infinite;
+
+}
+
+
+
+
+.flames {
+
+
+    font-size:35px;
+
+    animation:
+
+    flame 0.5s infinite alternate;
+
+}
+
+
+
+
+/* ---------- Floating Effects ---------- */
+
+
+.floating {
+
+
+    position:fixed;
+
+    bottom:-50px;
+
+    pointer-events:none;
+
+    z-index:999;
+
+
+    animation:
+
+    rise linear forwards;
+
+}
+
+
+
+@keyframes rise {
+
+
+from {
+
+    transform:
+    translateY(0)
+    rotate(0deg);
+
+    opacity:1;
+
+}
+
+
+to {
+
+    transform:
+    translateY(-120vh)
+    rotate(360deg);
+
+    opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+/* ---------- Animations ---------- */
+
+
+@keyframes giftFloat {
+
+
+50% {
+
+    transform:translateY(-20px);
+
+}
+
+}
+
+
+
+@keyframes flame {
+
+
+from {
+
+    transform:scale(1);
+
+}
+
+
+to {
+
+    transform:scale(1.3);
+
+}
+
+
+}
+
+
+
+@keyframes cakeBounce {
+
+
+50% {
+
+    transform:translateY(-15px);
+
+}
+
+
+}
+
+
+
+@keyframes cardOpen {
+
+
+from {
+
+    opacity:0;
+
+    transform:scale(.7);
+
+}
+
+
+to {
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+}
 
