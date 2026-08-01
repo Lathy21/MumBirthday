@@ -1,20 +1,16 @@
 function openGift() {
 
-
     let gift = document.getElementById("giftBox");
-
 
     gift.classList.add("openGift");
 
 
-
     setTimeout(() => {
-
 
         document.getElementById("giftScreen").style.display = "none";
 
-
-        document.getElementById("birthdayCard")
+        document
+        .getElementById("birthdayCard")
         .classList.remove("hidden");
 
 
@@ -22,8 +18,6 @@ function openGift() {
 
 
     }, 1200);
-
-
 
 }
 
@@ -38,7 +32,7 @@ function startCelebration() {
 
         createEffect("✨");
 
-    }, 700);
+    }, 500);
 
 
 
@@ -46,7 +40,7 @@ function startCelebration() {
 
         createEffect("🌸");
 
-    }, 1200);
+    }, 900);
 
 
 
@@ -54,11 +48,11 @@ function startCelebration() {
 
         createEffect("❤️");
 
-    }, 1500);
+    }, 1200);
 
 
 
-    fireworks();
+    createFireworks();
 
 
 }
@@ -68,42 +62,39 @@ function startCelebration() {
 
 
 
-
 function createEffect(symbol) {
 
 
-    let item = document.createElement("div");
+    let effect = document.createElement("div");
 
 
-    item.innerHTML = symbol;
+    effect.className = "floating";
 
 
-    item.className = "floating";
+    effect.innerHTML = symbol;
 
 
-    item.style.left =
-    Math.random() * 90 + "vw";
+    effect.style.left =
+    Math.random() * 95 + "vw";
 
 
-    item.style.fontSize =
-    (20 + Math.random() * 25) + "px";
+    effect.style.fontSize =
+    (20 + Math.random() * 35) + "px";
 
 
 
-    item.style.animationDuration =
+    effect.style.animationDuration =
     (4 + Math.random() * 5) + "s";
 
 
 
-    document.body.appendChild(item);
+    document.body.appendChild(effect);
 
 
 
     setTimeout(() => {
 
-
-        item.remove();
-
+        effect.remove();
 
     },9000);
 
@@ -115,20 +106,24 @@ function createEffect(symbol) {
 
 
 
+function createFireworks() {
 
-function fireworks() {
+
+    let symbols = ["🎆","✨","🎉"];
 
 
-    for(let i = 0; i < 25; i++) {
+    for(let i = 0; i < 30; i++) {
 
 
         setTimeout(() => {
 
 
-            createEffect("🎆");
+            createEffect(
+            symbols[Math.floor(Math.random()*symbols.length)]
+            );
 
 
-        }, i * 80);
+        }, i * 100);
 
 
     }
